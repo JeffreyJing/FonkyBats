@@ -1,0 +1,385 @@
+/* -------
+header components
+------- */ 
+
+.header {
+  background-image: url("../../resources/header-bg.jpg");
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  position: relative;
+  width: 100%;
+}
+.header:after {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 35%,rgba(0,0,0,0.02) 36%,rgba(0,0,0,1) 100%);
+  bottom: 0;
+  content:'';
+  display: block;
+  height: 8rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.header-hide-after:after {
+  display: none;
+}
+
+/* modifiers */
+.header.is-waiting .header-social {
+  flex: 1;
+  justify-self: flex-end;
+}
+
+.header.is-waiting .header-logo {
+  margin-top: 2rem;
+}
+
+.header.is-waiting .header-scroll {
+  bottom: 0;
+}
+
+/* topbar */
+.header-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 4.4rem;
+}
+
+.header-btn-wallet {
+  align-items: center;
+  display: flex;
+}
+.header-btn-wallet > i {
+  background-image: url('../../resources/ethereum.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 2.5rem;
+  margin-right: 1.2rem;
+  position: relative;
+  width: 2rem;
+  z-index: 3;
+}
+
+.header-social {
+  align-items: center;
+  display: flex;
+  justify-content: end;
+  list-style-type: none ;
+  margin: 0;
+  padding: 0;
+}
+
+.header-social > li {
+  margin-left: 3rem;
+}
+
+/* content */
+.header-logo {
+  display: block;
+  margin: 8rem auto 1rem;
+  object-fit: cover;
+  width: 75rem;
+}
+
+.header-connect {
+  margin: 0 auto;
+}
+
+.header-connect.hide {
+  display: none;
+}
+
+/* form */
+.header-form {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--gray44);
+  border-radius: 0.8rem;
+  padding: 2rem 3rem;
+  margin: 0 auto;
+  display: flex;
+  max-width: 56rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-form-content {
+  flex: 1;
+  margin-right: 3rem;
+}
+
+.header-form-label span:first-child {
+  color: var(--grayD4);
+  font-size: 1.6rem;
+  font-weight: var(--regular);
+}
+
+.header-form-label span:last-child {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: var(--regular);
+}
+
+.header-form-range {
+  margin-top: 2rem;
+  -webkit-appearance: none;  
+  background-color: var(--grayD4);
+  border-radius: 0.3rem;
+  height: 0.8rem;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+.header-form-range::-webkit-slider-thumb {  
+  -webkit-appearance: none;  
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 1.6rem var(--color-primary);
+  height: 2rem;
+  position: relative;
+  width: 2rem;  
+  z-index: 100;
+} 
+
+.header-form-price {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.header-form-price > b {
+  color: var(--white);
+}
+
+.header-form-adress {
+  background-color: black;
+  border-radius: 7rem;
+  border: 0.3rem solid #838585;
+  color: var(--white);
+  margin-top: 2rem;
+  outline: 0;
+  padding: 1.6rem 3rem;
+  width: 100%;
+}
+
+/* scroll */
+.header-scroll {
+  bottom: 2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+}
+
+.header-scroll-content {
+  background: transparent;
+  border-radius: 6rem;
+  border: 0.3rem solid var(--white);
+  height: 4rem;
+  left: calc(50% - 1rem);
+  position: relative;
+  width: 2rem;
+  z-index: 1;
+}
+
+.header-scroll-circle {
+  animation: circle 2.5s ease-in-out infinite alternate;
+  background: var(--white);
+  border-radius: 50%;
+  height: 1rem;
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  width: 1rem;
+}
+
+.header-scroll-text {
+  color: var(--white);
+  display: block;
+  margin-top: 1.6rem;
+  text-align: center ;
+}
+
+@keyframes circle {
+  0% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(1rem);
+  }
+}
+
+/* countdown */
+.countdown {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.8rem;
+  border: 1px solid var(--gray44);
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 0;
+  max-width: 65rem;
+  padding: 2rem 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.countdown-title {
+  color: var(--white);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--ubuntu);
+  font-weight: var(--medium);
+}
+
+.countdown-days {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+	margin: 1rem 0 0;
+  padding: 0 3rem;
+}
+
+.countdown-days li {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-numbers {
+	color: var(--white);
+  font-size: 2.8rem;
+  font-weight: var(--medium);
+} 
+
+.countdown-name {
+  color: var(--grayAA);
+	font-size: 1.6rem;
+	line-height: 1;
+  font-weight: var(--regular);
+}
+
+#countdown-progressBar {
+  background-color: var(--color-primary);
+  border-radius: 0.4rem;
+  height: 2.2rem;
+  margin: 1rem auto;
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+#countdown-progressBar div {
+  background-color: var(--color-primary-lighten);
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  height: 100%;
+  line-height: 2.2rem;
+  padding: 0 1rem;
+  text-align: right;
+  width: 0;
+}
+
+/* -------
+responsive
+------- */ 
+@media (max-width: 1024px) {
+  .header {
+    height: 100vh;
+  }
+
+  .header-top {
+    padding: 3rem;
+  }
+
+  .header.is-waiting .header-logo,
+  .header-logo {
+    margin: 0;
+    width: 100%;
+  }
+
+  .header-connect.is-mobile {
+    display: inline-block;
+  }
+
+  .header-content {
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: stretch;
+    display: flex;
+    left: 3rem;
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+@media (max-width: 680px) {
+
+  .header-top {
+    flex-direction: column-reverse;
+    padding: 2rem 3rem;
+  }
+
+  .header-social {
+    margin-bottom: 2rem;
+  }
+
+  .header-social > li:first-child {
+    margin: 0;
+  }
+
+  .header-form {
+    flex-direction: column;
+  }
+
+  .header-form-content {
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+  .countdown {
+    padding: 2rem;
+  }
+
+  .countdown-days {
+    padding: 0;
+  }
+
+  .countdown-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .header.is-waiting .header-scroll {
+    bottom: 2rem;
+  }
+}
+
+.header-form.hide{
+  display: none;
+}
+
+.header-btn-wallet.hide{
+  display: none;
+}
+
+.header.hide{
+  display: none;
+}
+
+.header-scroll.hide {
+  display: none;
+}
+
+.header-form-range.hide {
+  display: none;
+}
+
+.header-form-price.hide {
+  display: none;
+}

@@ -1,0 +1,68 @@
+/* -------
+Reset css
+------- */ 
+
+html {
+  box-sizing: border-box; /* natural box layout model to all elements */
+  font-size: 62.5%; /* for easy rem sizing: 1rem = 10px */
+}
+
+/* allow modules to change the box-sizing */
+*,
+*::after,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--grayAA);
+  font-family: var(--roboto);
+  font-size: 1.6rem;
+  font-weight: var(--medium);
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+a:hover,
+a:focus-visible {
+  color: var(--color-primary-darken);
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+} 
+
+p {
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+p > span {
+  color: var(--white);
+}
+
+/* container */
+.container {
+  background-image: url("../resources/bg-fonkybats.jpg");
+  background-repeat: repeat-y;
+  background-size: 100%;
+  margin: 6rem auto 0;
+  max-width: 132rem;
+  padding: 0 2rem 12rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 3rem 6rem;
+    margin: 0;
+  }
+}

@@ -1,0 +1,8 @@
+:root {
+  --roboto: roboto, sans-serif;
+  --ubuntu: ubuntu, sans-serif;
+
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+}
