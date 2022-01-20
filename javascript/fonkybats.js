@@ -1,6 +1,6 @@
 const NFT_CONTRACT_ADDRESS = "0x79F8c31b11bD95c3857b23947C69a0e0feE4b192";
 const OWNER_ADDRESS = "0x5786E29Ef6E3BA1084a9Dd85742177C55fc1a1f6";
-const NODE_API_KEY = Cred.apiKey;
+// const NODE_API_KEY = Cred.apiKey;
 const GAS_FEES = 500000;
 
 const NETWORK = "rinkeby";
@@ -227,7 +227,7 @@ const MINTING_MAIN_SALE_PRICE = 0.09
 
 const network =
     NETWORK === "mainnet" || NETWORK === "live" ? "mainnet" : "rinkeby";
-const web3Instance = new Web3(Web3.givenProvider, "https://eth-" + network + ".alchemyapi.io/v2/" + NODE_API_KEY);
+let web3Instance;
 
 //IPFS Protocol prefix
 const IPFS_PROTOCOL_PREFIX = "ipfs://";
@@ -386,6 +386,11 @@ async function setStateMainSale() {
  * @returns {Promise<void>}
  */
 async function connectWallet() {
+    if (window.ethereum) {
+        await window.ethereum.send("eth_requestAccounts");
+        web3Instance = new Web3(window.ethereum);
+    }
+    
     let accounts = await web3Instance.eth.requestAccounts();
     const mintAddress = accounts[0];
 
