@@ -70,4 +70,6 @@ Buttons components
 
 .btn.hide{
   display: none;
+  padding: 32px 16px;
+  font-size: 30px;
 }

@@ -42,7 +42,8 @@
             </li>
         </ul>
     </div>
-
+    
+    
     <div class="header-content">
         <img alt="Welcome to fonkyBats" class="header-logo" src="resources/logo-fonkybats.png">
         <button class="btn header-connect" id="walletConnectButton" onclick="connectWallet()">
@@ -59,14 +60,14 @@
             <div class="header-form-content">
                 <div class="header-form-label">
                     <span>Number Of NFTs to Mint :</span>
-                    <span id="nftToMintNumber">3</span>
+                    <span id="nftToMintNumber">1</span>
                 </div>
                 <!-- Presale-->
-                <input class="header-form-range hide" id="nftRangePreSale" max="5" min="1"
+                <input class="header-form-range hide" id="nftRangePreSale" max="20" min="1"
                        onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintPreSale').html(($(this).val()*0.07).toFixed(2)+'Ξ')"
                        type="range"/>
                 <span class="header-form-price hide" id="nftPricePreSale">Price/nft : <b>0.07Ξ</b> Total: <b
-                        id="totalPriceToMintPreSale">0.21Ξ</b></span>
+                        id="totalPriceToMintPreSale">0.07Ξ</b></span>
                 <!--MainSale-->
                 <input class="header-form-range hide" id="nftRangeMainSale" max="29" min="1"
                        onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintMainSale').html(($(this).val()*0.09).toFixed(2)+'Ξ')"
@@ -146,13 +147,7 @@
         </div>
     </div>
 
-    <div class="header-scroll" id="scrollDownDiv">
-        <div class="header-scroll-content">
-            <div class="header-scroll-circle"></div>
-        </div>
-        <div class="header-scroll-text">Scroll down</div>
-    </div>
-
+   
 </header>
 
 <!--Loading FonkyBats-->
@@ -185,6 +180,15 @@
                 <span>Connect Wallet</span>
             </button>
         </a>
+    
+    <!-- 
+    <div class="header-scroll" id="scrollDownDivLoading">
+        <div class="header-scroll-content">
+            <div class="header-scroll-circle"></div>
+        </div>
+        <div class="header-scroll-text">Scroll down</div>
+    </div>
+    -->
 
     <!--    <div class="countdown">
             <H2 class="countdown-title">FonkyBats are loading ...</h2>
@@ -215,13 +219,9 @@
         </div> -->
     </div>
 
-    <div class="header-scroll" id="scrollDownDivLoading">
-        <div class="header-scroll-content">
-            <div class="header-scroll-circle"></div>
-        </div>
-        <div class="header-scroll-text">Scroll down</div>
-    </div>
+   
 
+    
 </header>
 
 <!-- start block container -->
@@ -231,12 +231,10 @@
         <div class="about-intro">
             <div class="about-content">
                 <div class="about-heading">About</div>
-                <img alt="9,999 unique FonkyBats" class="about-title" src="resources/999.png">
-                <p><span>FonkyBats</span> is a personal and artistic project directed by an artist rich of a 20 years
-                    experience in creative artwork and art business : here is <span>FonkyBats !</span></p>
-                <p>Freddy Miet started to work on that project with the central idea to bring old art to new art, <span>mixing masterpieces and history of art inside the NFT’s through a playful way for the young generations.</span>
-                    the artist second idea have been to play with codes of Generative Art to create something totaly
-                    original and unique.</p>
+                <img alt="9,999 unique FonkyBats" class="about-title" src="resources/1999.png">
+                <p><span>FonkyBats</span> is a personal project directed by Freddy Miet, an artist with 20 years of
+                    experience in the creative world and art industry.</p>
+                <p>Freddy's goal for FonkyBats is to bring new and modern artistic styles to classic characters while mixing masterpieces throughout history with NFT’s.</p>
             </div>
             <div class="about-aside">
                 <img alt="Fonkybats NFT" class="about-gallery is-mobile" src="resources/single-nft-about.jpg">
@@ -244,7 +242,7 @@
             </div>
         </div>
         <div class="about-helmet">
-            <div class="about-subtitle">Some rares, super rares and<br> Legendary Helmets</div>
+            <div class="about-subtitle">Rare, Super Rare, and<br> Legendary Helmets</div>
             <ul class="about-helmet-items">
                 <li><img alt="helmet legendaire" class="about-helmet-item" src="resources/helmet-1.jpg"></li>
                 <li><img alt="helmet legendaire" class="about-helmet-item" src="resources/helmet-2.jpg"></li>
@@ -256,22 +254,15 @@
     <div class="roadmap">
         <div class="roadmap-heading">
             <img alt="FonkyBats roadmap" class="roadmap-title" src="resources/roadmap.png">
-            <p class="roadmap-subtitle">FonkyBats will launch on <span>TBA DATE</span>.<br>Collect your favorite
-                Bat and join our family.</p>
+            <p class="roadmap-subtitle">FonkyBats will launch on <span>January 28 at 8PM EST</span>.<br>Collect your favorite
+                Bat and join our family!</p>
         </div>
 
         <div class=roadmap-sales>
             <div class="roadmap-sales-item">
                 <div class="roadmap-sales-item-head">
-                    <span>Pre Sale</span>
-                    <div>17 december</div>
-                </div>
-                <p>0,07 ETH</p>
-            </div>
-            <div class="roadmap-sales-item">
-                <div class="roadmap-sales-item-head">
                     <span>Main sale</span>
-                    <div>01 February</div>
+                    <div>January 28</div>
                 </div>
                 <p>0,07 ETH</p>
             </div>
@@ -280,7 +271,7 @@
                     <span>Opensea</span>
                     <div>Live Now!</div>
                 </div>
-                <p>Reveal Opensea</p>
+                <p>Live Now!</p>
             </div>
         </div>
 
@@ -291,8 +282,8 @@
                 </div>
             </div>
             <div class="roadmap-content">
-                <h4>Step 1</h4>
-                <p>Well … that’s all baby ?</p>
+                <h4>FonkyBats Giveaway</h4>
+                <p>Upon reaching 10% of sales, 5 FonkyBats will be given away to random FonkyBats holders.</p>
             </div>
         </div>
         <div class="roadmap-step">
@@ -302,9 +293,9 @@
                 </div>
             </div>
             <div class="roadmap-content">
-                <h4>Step 2</h4>
-                <p>We’ll organise the 5 first Giveaways and
-                    <span>will send the 5 first Art Prints signed and numbered</span> by the artist himself :</p>
+                <h4>FonkyBats Signed Art Prints Giveaway</h4>
+                <p>At 20% sales, 5 lucky FonkyBats holders will receive
+                    <span>Art Prints with a certificate of authenticity signed and numbered</span> by the artist himself :</p>
                 <ul>
                     <li>- limited to only 1 copie corresponding to the NFT number</li>
                     <li>- size 31 » x 31 » (80cm x 80 cm)</li>
@@ -330,10 +321,10 @@
                 </div>
             </div>
             <div class="roadmap-content">
-                <h4>Step 3</h4>
-                <p>We’ll introduce the <span>1st Special One : The “Golden One”</span>. To celebrate the 50%, We’ll
-                    organise a GiveAway to know who will win <span>the Special Bat Art Print signed and numbered</span>
-                    by the artist himself :</p>
+                <h4>The Golden One</h4>
+                <p>After the 1000th FonkyBats sells, <span> The “Golden One”</span> will be revealed, and we’ll
+                    organise a giveAway for <span>the Special Bat Art Print, signed and numbered</span>
+                    by Freddy himself:</p>
                 <ul>
                     <li>- signed and numbered by the artist himself</li>
                     <li>- limited to only 10 copies in the world</li>
@@ -362,9 +353,9 @@
             </div>
             <div class="roadmap-content with-single-image">
                 <div class="roadmap-content-left">
-                    <h4>Step 4</h4>
-                    <p>We’ll unveil <span>the winner of the « Golden One »</span> who will receve that <span>Special one Statue</span>
-                        !</p>
+                    <h4>Giveaways Galore</h4>
+                    <p>20 FonkyBats holders will receive one random FonkyBat, and one lucky FonkyBats holder will 
+                        be <span>the recipient of the Golden One!</span> </p>
                     <ul>
                         <li>- height: 25.75 » (65.4 cm)</li>
                         <li>- width: 9 » (22.9 cm)</li>
@@ -387,10 +378,12 @@
             </div>
             <div class="roadmap-content with-single-image">
                 <div class="roadmap-content-left">
-                    <h4>Step 5</h4>
-                    <p>We’ll organise <span>the next 5 Giveaways</span> and will send the next 5 Art Prints signed and
-                        numbered by the artist himself.</p>
-                    <p>After the reveal, <span>the first owner who will find and contact us with the easter egg in hands will win the 20ETH price !</span>
+                    <h4>SOLD OUT</h4>
+                    <p>Yay, we sold out! Upon sellout, FonkyBats will immediately pay to be listed on Rarity.tools, 
+                        and our journey together into the metaverse will begin. Teasers for the sequel collection 
+                        will be revealed shortly after, and holder benefits will start!
+                    </p>
+                    <p>After the reveal, <span>the first owner who will find and contact us with the easter egg in hand will win a 20ETH prize!</span>
                     </p>
                 </div>
                 <div class="roadmap-content-right">
@@ -406,14 +399,17 @@
                 </div>
             </div>
             <div class="roadmap-content">
-                <h4>Step 6</h4>
-                <p>Then what will Happen ? <br> During the next year to come,<span>the 2 next steps are already waiting to be launched</span>
-                    …</p>
+                <h4>Into the MetaVerse</h4>
+                <p> As we dive into the Metaverse, the FonkyBats world will expand like never before:
                 <ul style="margin-bottom: 2rem;">
-                    <li>- Serie Phase II of the FonkyBats Family</li>
-                    <li>- Special Ones Series</li>
+                    <li>- FonkyBats Sequel Collection</li>
+                    <li>- Special FonkyBats Series Releases</li>
+                    <li>- FonkyBats exclusive holders-only merchandise store</li>
+                    <li>- FONKYBATS BOBBLEHEADS!</li>
+                    <li>- $FONKY tokens</li>
                 </ul>
-                <p>Finally, <span>the future of the project is in your hands !</span></p>
+                <p><span>And much more- the FonkyBats team will be constantly listening to our holders' inputs <br>
+                         to better serve our community. WAGMI & LFGGGGG! </span></p>
             </div>
         </div>
     </div>
@@ -427,44 +423,10 @@
             <div class="team-content">
                 <h3><a href="https://twitter.com/freddymiet" rel="noopener" target="_blank">Freddy Miet</a></h3>
                 <h4>Artist and project director</h4>
-                <p>He’s the one that launch the project.<br> With more than <span>15 years</span> in Art Business, he’s
-                    an artist working in Digital Photography Art since more than 20 years and also directed some
-                    Multiples Short Movies and Video Clip. So you can prepare yourself for some very cool Surprises !
+                <p>The creator, owner, and artist of FonkyBats.<br> With more than <span>15 years spent in the art industry</span> 
+                    Freddy Miet is uniquely qualified as an NFT collection owner because he's done it all- with multiple short movies
+                    and animations under his belt, Mr. Miet intends to wow the NFT scene with the plans he has for FonkyBats. 
                 </p>
-            </div>
-        </div>
-        <div class="team-section">
-            <div class="team-aside">
-                <img alt="Than avatar" src="resources/than.png">
-            </div>
-            <div class="team-content">
-                <h3><a href="https://twitter.com/kxx_than" rel="noopener" target="_blank">Than</a></h3>
-                <h4>Marketing director</h4>
-                <p>He’s the one who bring that project to the moon ! If you talk with someone on a social Media : that’s
-                    Mr Than !</p>
-            </div>
-        </div>
-        <div class="team-section">
-            <div class="team-aside">
-                <img alt="Gizmo 73k05'r avatar" src="resources/73k05.jpg">
-            </div>
-            <div class="team-content">
-                <h3><a href="https://github.com/73k05" rel="noopener" target="_blank">Gizmo 73k05</a></h3>
-                <h4>Supreme Dev</h4>
-                <p>He’s the one who build the dev around the project. He has more than <span>14 years</span> of
-                    development experience in China, France, USA & Germany. He’s the Code <a href="http://inkos.fr"
-                                                                                             target="_blank">Genius</a>
-                    !</p>
-            </div>
-        </div>
-        <div class="team-section">
-            <div class="team-aside">
-                <img alt="Maxi Bab's avatar" src="resources/babs.jpg">
-            </div>
-            <div class="team-content">
-                <h3>Maxi Bab's</h3>
-                <h4>Block Chain God</h4>
-                <p>He’s the one who build the smart contract for the project. Don’t laugh with him dudes !</p>
             </div>
         </div>
     </div>
@@ -482,19 +444,18 @@
                 <h4>When I will be able to Mint some Fonkybats ?</h4>
             </div>
             <div class="accordion-content">
-                <p>These days, the Mint Date have been fixed for the 20 December</p>
+                <p>The FonkyBats mint will resume on Friday, Jan. 28 at 8PM EST.</p>
             </div>
         </div>
     </div>
     <div class="accordion-section">
         <div class="accordion-body">
             <div class="accordion-label">
-                <h4>When and where I will be able to see my NFT ?</h4>
+                <h4>When and where I will be able to see my NFT?</h4>
             </div>
             <div class="accordion-content">
-                <p>The reveal for the final look of your NFT have been fixed for the 24 December Midnight ! You will be
-                    able to see your Nft on the opensea link just here : <br><a
-                            href="https://testnets.opensea.io/collection/fonkybats-v4" target="blank">Lien Opensea</a>
+                <p>All FonkyBats holders will be able to see their FonkyBats NFTs on opensea here: <br><a
+                            href="https://opensea.io/collection/fonkybat" target="blank">FonkyBats</a>
                 </p>
             </div>
         </div>
@@ -505,34 +466,24 @@
                 <h4>How many FonkyBats will there be available?</h4>
             </div>
             <div class="accordion-content">
-                <p>9997 generative, 1 Golden One and 1 Hidden Easter Egg.</p>
+                <p>1998 generative, 1 Golden One and 1 Hidden Easter Egg.</p>
             </div>
         </div>
     </div>
     <div class="accordion-section">
         <div class="accordion-body">
             <div class="accordion-label">
-                <h4>How many Layers for Hom Many Properties ?</h4>
+                <h4>How many Layers and Properties make up this collection?</h4>
             </div>
             <div class="accordion-content">
-                <p>More than 350 Different Layers dispatch in 12 Properties</p>
+                <p>Freddy Miet has hand drawn and designed more than 350 different layers in 12 different properties for the FonkyBats collection.</p>
             </div>
         </div>
     </div>
     <div class="accordion-section">
         <div class="accordion-body">
             <div class="accordion-label">
-                <h4>When will I be able to mint a FonkyBat ?</h4>
-            </div>
-            <div class="accordion-content">
-                <p>22 December for a Reveal at Christmas Morning</p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-section">
-        <div class="accordion-body">
-            <div class="accordion-label">
-                <h4>What blockchain will you be using ?</h4>
+                <h4>What blockchain are FonkyBats on?</h4>
             </div>
             <div class="accordion-content">
                 <p>The Ethereum Blockchain.</p>
@@ -542,7 +493,7 @@
     <div class="accordion-section">
         <div class="accordion-body">
             <div class="accordion-label">
-                <h4>How much will it cost to mint one FonkyBat ?</h4>
+                <h4>How much will it cost to mint one FonkyBat?</h4>
             </div>
             <div class="accordion-content">
                 <p>0.07 ETH</p>
@@ -552,52 +503,30 @@
     <div class="accordion-section">
         <div class="accordion-body">
             <div class="accordion-label">
-                <h4>What are the secondary royalty fees ?</h4>
+                <h4>What are the secondary royalty fees?</h4>
             </div>
             <div class="accordion-content">
-                <p>7 %</p>
+                <p>In order to fund future ideas and collections related to FonkyBats, the royalties will be set at 7%.</p>
             </div>
         </div>
     </div>
     <div class="accordion-section">
         <div class="accordion-body">
             <div class="accordion-label">
-                <h4>Will there be giveaways ?</h4>
+                <h4>Is there be a pre-sale?</h4>
             </div>
             <div class="accordion-content">
-                <p>That's the point of that project: organizing some giveaways before the launch and then every 2 weeks
-                    during one year after the 100% reach: then we will send some real stuff to the NFT owners !</p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-section">
-        <div class="accordion-body">
-            <div class="accordion-label">
-                <h4>there be a pre-sale ?</h4>
-            </div>
-            <div class="accordion-content">
-                <p>The 18 December : 400 winner will be able to mint 5 NFT Max !</p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-section">
-        <div class="accordion-body">
-            <div class="accordion-label">
-                <h4>What drop structure do you have ?</h4>
-            </div>
-            <div class="accordion-content">
-                <p>There will be raffles to make it fair for everyone without high gas fees, additional information may
-                    be found.</p>
+                <p>No- there will only be a public launch so as to make the drop as fair as possible for everyone.</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="cta">
-    <h3 class="cta-title">Join FonkyBats family</h3>
+    <h3 class="cta-title">Join the FonkyBats family!</h3>
     <div class="cta-buttons">
         <a class="btn" href="https://discord.gg/SB9kNhsNt3" target="_blank"><span>Join our discord</span></a>
-        <span class="cta-divider">Or</span>
+        <span class="cta-divider"></span>
         <a class="btn" href="https://twitter.com/FonkyBats" target="_blank"><span>Join our twitter</span></a>
     </div>
 </div>
@@ -621,7 +550,7 @@
                 <li><a href="https://twitter.com/FonkyBats" target="_blank"><img alt="FonkyBats twitter"
                                                                                  src="resources/icon-twitter.png"></a>
                 </li>
-                <li><a href="#" target="_blank">
+                <li><a href="https://opensea.io/collection/fonkybat" target="_blank">
                     <img alt="FonkyBats Opensea" src="resources/icon-opensea.png"></a>
                 </li>
             </ul>
@@ -630,7 +559,7 @@
     </div>
 </footer>
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal-container" id="modal-container">
     <div class="modal-content">
         <div class="modal-close close-modal" title="Close">
@@ -651,7 +580,7 @@
             <span>Close modal</span>
         </button>
     </div>
-</div>
+</div> -->
 
 </body>
 
@@ -659,7 +588,6 @@
 <script src="libs/flickity.pkgd.min.js"></script>
 <script src="libs/web3js/web3.min.js"></script>
 
-<script src="javascript/cred.js" type="text/javascript"></script>
 <script src="javascript/fonkybats.js" type="text/javascript"></script>
 <script src="javascript/flickity.js" type="text/javascript"></script>
 <script src="javascript/accordion.js" type="text/javascript"></script>
