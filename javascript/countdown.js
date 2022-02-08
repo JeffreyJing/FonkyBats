@@ -4,7 +4,7 @@
 let deadline = new Date(1639979999351);
 
 let x = setInterval(function() {
-
+/*
 let now = Date.now();
 let t = deadline - now;
 let days = Math.floor(t / (1000 * 60 * 60 * 24));
@@ -14,7 +14,7 @@ let seconds = Math.floor((t % (1000 * 60)) / 1000);
 document.getElementById("day").innerHTML = days ;
 document.getElementById("hour").innerHTML = hours;
 document.getElementById("minute").innerHTML = minutes;
-document.getElementById("second").innerHTML = seconds;
+document.getElementById("second").innerHTML = seconds;*/
 if (t < 0) {
         clearInterval(x);
         document.getElementById("day").innerHTML ='0';
