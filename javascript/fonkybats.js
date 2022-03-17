@@ -414,6 +414,7 @@ async function connectWallet() {
 
     //Test Batch
     // await tokenURIUpdates();
+
 }
 
 /**
