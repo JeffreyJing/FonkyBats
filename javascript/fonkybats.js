@@ -1,5 +1,5 @@
-const NFT_CONTRACT_ADDRESS = "0x79F8c31b11bD95c3857b23947C69a0e0feE4b192";
-const OWNER_ADDRESS = "0x62045C1C484A92eb9aa784bcD6379a0a5559415a";
+const NFT_CONTRACT_ADDRESS = "0xfb202f29b9a6e47a4b44bb37ec42eee9b157fd46";
+const OWNER_ADDRESS = "0x232f101d1e9860efea12fa4506ffd15aafd52513";
 // const NODE_API_KEY = Cred.apiKey;
 const GAS_FEES = 250000;
 
@@ -7,27 +7,18 @@ const NETWORK = "rinkeby";
 
 const NFT_MAIN_SALE_ABI = [
     {
-        constant: false,
-        inputs: [
-            {
-                name: "_to",
-                type: "address",
-            },
-            {
-                name: "_numberOfTokens",
-                type: "uint256",
-            },
-            {
-                name: "_metadataURI",
-                type: "string",
-            },
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_mintAmount",
+            "type": "uint256"
+          }
         ],
-        name: "mainSaleMint",
-        outputs: [],
-        payable: true,
-        stateMutability: "payable",
-        type: "function",
-    },
+        "name": "mint",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+      },
 ];
 
 const NFT_PRE_ORDER_ABI = [
@@ -258,23 +249,23 @@ function initUi() {
  * Init sale state in UIX
  */
 function initSaleState() {
-    return getSaleState().then(contractSaleState => {
-        console.log(`State gotten ${contractSaleState}`)
-        if (contractSaleState === undefined || contractSaleState == CONTRACT_SALE_STATE_INACTIVE) {
-            return contractSaleState;
-        }
-        if (contractSaleState == CONTRACT_SALE_STATE_PRESALE) {
-            displayPreSale();
-        }
-        if (contractSaleState == CONTRACT_SALE_STATE_MAIN_SALE) {
+    // return getSaleState().then(contractSaleState => {
+    //     console.log(`State gotten ${contractSaleState}`)
+    //     if (contractSaleState === undefined || contractSaleState == CONTRACT_SALE_STATE_INACTIVE) {
+    //         return contractSaleState;
+    //     }
+    //     if (contractSaleState == CONTRACT_SALE_STATE_PRESALE) {
+    //         displayPreSale();
+    //     }
+    //     if (contractSaleState == CONTRACT_SALE_STATE_MAIN_SALE) {
             displayMainSale();
-        }
+        // }
 
         displayElementById("nftMintDiv");
         displayElementById("headerSale");
         hideElementById("headerLoading");
-        return contractSaleState;
-    });
+    //     return contractSaleState;
+    // });
 }
 
 /**
@@ -391,7 +382,9 @@ async function connectWallet() {
         web3Instance = new Web3(window.ethereum);
     }
     
+    console.log('we went here')
     let accounts = await web3Instance.eth.requestAccounts();
+    console.log('we went here 2')
     const mintAddress = accounts[0];
 
     if (mintAddress === undefined || mintAddress === null) {
@@ -399,6 +392,7 @@ async function connectWallet() {
         return;
     }
 
+    console.log('3')
     // Set & display wallet infos
     getElementById("walletAddressSpan").innerText = mintAddress.substr(0, 6).concat("...").concat(mintAddress.substr(mintAddress.length - 5, mintAddress.length - 1));
     getElementById("walletAddressLoadingSpan").innerText = mintAddress.substr(0, 6).concat("...").concat(mintAddress.substr(mintAddress.length - 5, mintAddress.length - 1));
@@ -408,8 +402,10 @@ async function connectWallet() {
     hideElementById("walletConnectButton");
     hideElementById("walletConnectLoadingButton");
 
+    console.log('4')
     //Init sale state
     const contractSaleState = await initSaleState();
+    console.log('we go here')
     initAdminUi(mintAddress, contractSaleState);
 
     //Test Batch
@@ -488,7 +484,7 @@ async function mainSaleMintNfts(numFonkyBats) {
         const mintPayment = (MINTING_MAIN_SALE_PRICE * numFonkyBats).toString()
         console.log(`Mint ${numFonkyBats} NFTs from [${mintAddress}] to [${mintAddress}] for ${mintPayment}Ξ`);
         result = await nftContract.methods
-            .mainSaleMint(mintAddress, numFonkyBats, FANTOM_TOKEN_CID_URI)
+            .mint(numFonkyBats)
             .send({from: mintAddress, value: web3Instance.utils.toWei(mintPayment, "ether")});
     } catch (error) {
         console.error(`Error while minting...`)
@@ -671,17 +667,18 @@ async function clearAllTokenUriBatch() {
  * Set Sale State in Smart Contract
  * @returns {Promise<void>}
  */
-async function getSaleState() {
-    const fonkyContract = new web3Instance.eth.Contract(
-        GET_SALE_STATE_ABI,
-        NFT_CONTRACT_ADDRESS,
-        {gasLimit: GAS_FEES.toString()}
-    );
+// async function getSaleState() {
+//     const fonkyContract = new web3Instance.eth.Contract(
+//         GET_SALE_STATE_ABI,
+//         NFT_CONTRACT_ADDRESS,
+//         {gasLimit: GAS_FEES.toString()}
+//     );
 
-    const saleState = await fonkyContract.methods.saleState.call().call();
-    console.log(`Sale State in contract: ${saleState}`);
-    return saleState;
-}
+//     console.log(44)
+//     const saleState = await fonkyContract.methods.saleState.call().call();
+//     console.log(`Sale State in contract: ${saleState}`);
+//     return saleState;
+// }
 
 /**
  * Get Token URI in Smart Contract
