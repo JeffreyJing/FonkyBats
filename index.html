@@ -43,7 +43,7 @@
     
     
     <div class="header-content">
-        <img alt="Welcome to fonkyBats" class="header-logo" src="resources/logo-fonkybats.png">
+        <img alt="Welcome to fonkyBats" class="header-logo" src="resources/logo-bobblebats.png">
         <button class="btn header-connect" id="walletConnectButton" onclick="connectWallet()">
             <span>Connect Wallet</span>
         </button>
@@ -55,10 +55,11 @@
 
         <!-- Mint Tokens -->
         <div class="header-form hide" id="nftMintDiv">
+            
             <div class="header-form-content">
                 <div class="header-form-label">
                     <span>Number Of NFTs to Mint :</span>
-                    <span id="nftToMintNumber">11</span>
+                    <span id="nftToMintNumber">6</span>
                 </div>
                 <!-- Presale-->
                 <input class="header-form-range hide" id="nftRangePreSale" max="20" min="1"
@@ -67,7 +68,7 @@
                 <span class="header-form-price hide" id="nftPricePreSale">Price/nft : <b>0.07Ξ</b> Total: <b
                         id="totalPriceToMintPreSale">0.77Ξ</b></span>
                 <!--MainSale-->
-                <input class="header-form-range hide" id="nftRangeMainSale" max="29" min="1"
+                <input class="header-form-range hide" id="nftRangeMainSale" max="10" min="1"
                        onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintMainSale').html(($(this).val()*0.09).toFixed(2)+'Ξ')"
                        type="range"/>
                 <span class="header-form-price hide" id="nftPriceMainSale">Price/nft : <b>0.09Ξ</b> Total: <b
