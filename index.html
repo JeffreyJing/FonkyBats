@@ -65,21 +65,21 @@
                 <input class="header-form-range hide" id="nftRangePreSale" max="20" min="1"
                        onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintPreSale').html(($(this).val()*0.07).toFixed(2)+'Ξ')"
                        type="range"/>
-                <span class="header-form-price hide" id="nftPricePreSale">Price/nft : <b>0.07Ξ</b> Total: <b
+                <span class="header-form-price hide" id="nftPricePreSale">Price per nft : <b>0.04Ξ</b> Total: <b
                         id="totalPriceToMintPreSale">0.77Ξ</b></span>
                 <!--MainSale-->
                 <input class="header-form-range hide" id="nftRangeMainSale" max="10" min="1"
-                       onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintMainSale').html(($(this).val()*0.09).toFixed(2)+'Ξ')"
+                       onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintMainSale').html(($(this).val()*0.04).toFixed(2)+'Ξ')"
                        type="range"/>
-                <span class="header-form-price hide" id="nftPriceMainSale">Price/nft : <b>0.09Ξ</b> Total: <b
-                        id="totalPriceToMintMainSale">0.21Ξ</b></span>
+                <span class="header-form-price hide" id="nftPriceMainSale">Price/nft : <b>0.04Ξ</b> Total: <b
+                        id="totalPriceToMintMainSale">0.24Ξ</b></span>
             </div>
             <button class="btn hide" href="" id="nftPreSaleMintButton"
                     onclick="preOrderMintNfts(document.getElementById('nftRangePreSale').value)" type="button"><span>Mint BobbleBats</span>
             </button>
             <button class="btn hide" href="" id="nftSaleMintButton"
                     onclick="mainSaleMintNfts(document.getElementById('nftRangeMainSale').value)" type="button">
-                <span>Mint MainSale</span></button>
+                <span>Mint</span></button>
         </div>
 
         <!-- AdMint Tokens (OnlyOwner) -->
@@ -253,64 +253,20 @@
     <div class="roadmap">
         <div class="roadmap-heading">
             <img alt="BobbleBats roadmap" class="roadmap-title" src="resources/roadmap.png">
-            <p class="roadmap-subtitle">BobbleBats will launch on <span>February 9 at 8PM EST</span>.<br>Collect your favorite
-                Bat and join our family!</p>
+            
         </div>
 
-        <div class=roadmap-sales>
-            <div class="roadmap-sales-item">
-                <div class="roadmap-sales-item-head">
-                    <span>Main sale</span>
-                    <div>February 8</div>
-                </div>
-                <p>0.035 ETH</p>
-            </div>
-            <div class="roadmap-sales-item">
-                <div class="roadmap-sales-item-head">
-                    <span>Opensea</span>
-                    <div>Coming soon</div>
-                </div>
-                <p>Soon</p>
-            </div>
-        </div>
+        
 
         <div class="roadmap-step">
             <div class="roadmap-counter">
                 <div class="roadmap-counter-text">
-                    <span>10</span>%
+                    <span>25</span>%
                 </div>
             </div>
             <div class="roadmap-content">
                 <h4>BobbleBats Giveaway</h4>
-                <p>Upon reaching 10% of sales, 5 BobbleBats will be given away to random BobbleBats holders.</p>
-            </div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-counter">
-                <div class="roadmap-counter-text">
-                    <span>20</span>%
-                </div>
-            </div>
-            <div class="roadmap-content">
-                <h4>BobbleBats Signed Art Prints Giveaway</h4>
-                <p>At 20% sales, 5 lucky BobbleBats holders will receive
-                    <span>Art Prints with a certificate of authenticity signed and numbered</span> by the artist himself :</p>
-                <ul>
-                    <li>- limited to only 1 copie corresponding to the NFT number</li>
-                    <li>- size 31 » x 31 » (80cm x 80 cm)</li>
-                    <li>- printed on Fine Art Paper "HAHNEMUHLE BARYTE 325G"</li>
-                    <li>- mounted on MUSEUM DIBOND (aluminium)</li>
-                    <li>- hand-numbered in gold pencil</li>
-                    <li>- signed by the artist - includes Certificate of Authenticity</li>
-                    <li>- value 2289 usd / each</li>
-                </ul>
-                <div class="roadmap-gallery roadmap-gallery-step2">
-                    <div class="roadmap-gallery-item"><img alt="step 2 Print rewards simulate"
-                                                           src="resources/step2-1.jpg"></div>
-                    <div class="roadmap-gallery-item"><img alt="step 2 Print COA" src="resources/step2-2.jpg"></div>
-                    <div class="roadmap-gallery-item"><img alt="step 2 Print original" src="resources/step2-3.jpg">
-                    </div>
-                </div>
+                <p>Upon reaching 25% of mints, 15 BobbleBats will be given away to random BobbleBats holders.</p>
             </div>
         </div>
         <div class="roadmap-step">
@@ -326,14 +282,14 @@
                     by Freddy himself:</p>
                 <ul>
                     <li>- signed and numbered by the artist himself</li>
-                    <li>- limited to only 10 copies in the world</li>
+                    <li>- limited to only 5 copies in the world</li>
                     <li>- size 31 » x 47 » (80cm x 120 cm)</li>
                     <li>- printed on Fine Art Paper "HAHNEMUHLE BARYTE 325G"</li>
                     <li>- mounted on MUSEUM DIBOND (aluminium)</li>
                     <li>- hand-numbered in gold pencil</li>
                     <li>- signed by the artist</li>
                     <li>- includes Certificate of Authenticity</li>
-                    <li>- value 3889 usd / each</li>
+                    <li>- valued at 3889 usd each</li>
                 </ul>
                 <div class="roadmap-gallery roadmap-gallery-step3">
                     <div class="roadmap-gallery-item"><img alt="step 3 Print rewards simulate"
@@ -341,31 +297,6 @@
                     <div class="roadmap-gallery-item"><img alt="step 3 Print COA" src="resources/step3-2.jpg"></div>
                     <div class="roadmap-gallery-item"><img alt="step 3 Print original" src="resources/step3-3.jpg">
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-counter">
-                <div class="roadmap-counter-text">
-                    <span>75</span>%
-                </div>
-            </div>
-            <div class="roadmap-content with-single-image">
-                <div class="roadmap-content-left">
-                    <h4>Giveaways Galore</h4>
-                    <p>20 BobbleBats holders will receive one random FonkyBat, and one lucky BobbleBats holder will 
-                        be <span>the recipient of the Golden One!</span> </p>
-                    <ul>
-                        <li>- height: 25.75 » (65.4 cm)</li>
-                        <li>- width: 9 » (22.9 cm)</li>
-                        <li>- depth: 9 » (22.9 cm)</li>
-                        <li>- weight: 12 lbs (5.4 kg)</li>
-                        <li>- material : Fabric / Polyresin</li>
-                        <li>- value 2889 usd</li>
-                    </ul>
-                </div>
-                <div class="roadmap-content-right">
-                    <img alt="Statut Batman Dorée" src="resources/statut-batman-doree.jpg">
                 </div>
             </div>
         </div>
@@ -382,8 +313,8 @@
                         and our journey together into the metaverse will begin. Teasers for the sequel collection 
                         will be revealed shortly after, and holder benefits will start!
                     </p>
-                    <p>After the reveal, <span>the first owner who will find and contact us with the easter egg in hand will win a 20ETH prize!</span>
-                    </p>
+
+                    <p>To start our chain of giveaways, 10 Lucky BobbleBats holders will each be sent 0.5 ETH. </p>
                 </div>
                 <div class="roadmap-content-right">
                     <img alt="BobbleBats easter eggs" src="resources/easter-egg.jpg">
@@ -405,7 +336,6 @@
                     <li>- Special BobbleBats Series Releases</li>
                     <li>- BobbleBats exclusive holders-only merchandise store</li>
                     <li>- BOBBLEBATS BOBBLEHEADS!</li>
-                    <li>- $FONKY tokens</li>
                 </ul>
                 <p><span>And much more- the BobbleBats team will be constantly listening to our holders' inputs <br>
                          to better serve our community. WAGMI & LFGGGGG! </span></p>
@@ -443,7 +373,7 @@
                 <h4>When I will be able to Mint some Bobblebats?</h4>
             </div>
             <div class="accordion-content">
-                <p>The BobbleBats mint will resume on Friday, Jan. 28 at 8PM EST.</p>
+                <p>BobbleBats are available to mint now!</p>
             </div>
         </div>
     </div>
@@ -453,8 +383,7 @@
                 <h4>When and where I will be able to see my NFT?</h4>
             </div>
             <div class="accordion-content">
-                <p>All BobbleBats holders will be able to see their BobbleBats NFTs on opensea here: <br><a
-                            href="https://opensea.io/collection/fonkybat" target="blank">BobbleBats</a>
+                <p>All BobbleBats holders will be able to see their BobbleBats NFTs on Opensea. <br>
                 </p>
             </div>
         </div>
@@ -465,7 +394,7 @@
                 <h4>How many BobbleBats will there be available?</h4>
             </div>
             <div class="accordion-content">
-                <p>1998 generative, 1 Golden One and 1 Hidden Easter Egg.</p>
+                <p>There are a total of 2,000 BobbleBats.</p>
             </div>
         </div>
     </div>
@@ -495,7 +424,7 @@
                 <h4>How much will it cost to mint one FonkyBat?</h4>
             </div>
             <div class="accordion-content">
-                <p>0.07 ETH</p>
+                <p>0.04 ETH</p>
             </div>
         </div>
     </div>
@@ -505,30 +434,13 @@
                 <h4>What are the secondary royalty fees?</h4>
             </div>
             <div class="accordion-content">
-                <p>In order to fund future ideas and collections related to BobbleBats, the royalties will be set at 7%.</p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-section">
-        <div class="accordion-body">
-            <div class="accordion-label">
-                <h4>Is there be a pre-sale?</h4>
-            </div>
-            <div class="accordion-content">
-                <p>No- there will only be a public launch so as to make the drop as fair as possible for everyone.</p>
+                <p>In order to fund future ideas and collections related to BobbleBats, the royalties will be set at 5%.</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="cta">
-    <h3 class="cta-title">Join the BobbleBats family!</h3>
-    <div class="cta-buttons">
-        <a class="btn" href="https://discord.gg/SB9kNhsNt3" target="_blank"><span>Join our discord</span></a>
-        <span class="cta-divider"></span>
-        <a class="btn" href="https://twitter.com/BobbleBatsNFT" target="_blank"><span>Join our twitter</span></a>
-    </div>
-</div>
+
 
 <footer class="footer">
     <img alt="logo bobbleBats" class="footer-logo" src="resources/logo-bobblebats.png">
