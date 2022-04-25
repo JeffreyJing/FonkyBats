@@ -81,69 +81,6 @@
                     onclick="mainSaleMintNfts(document.getElementById('nftRangeMainSale').value)" type="button">
                 <span>Mint</span></button>
         </div>
-
-        <!-- AdMint Tokens (OnlyOwner) -->
-        <div class="header-form hide" id="nftAdMintDiv">
-            <div class="header-form-content">
-                <div class="header-form-label">
-                    <span>Nb Of NFTs to AdMint :</span>
-                    <span id="nftToAdMintNumber"><label for="nftAdRange">13</label></span>
-                </div>
-                <input class="header-form-range" id="nftAdRange" max="25" min="1"
-                       onInput="$('#nftToAdMintNumber').html($(this).val())" type="range"/>
-                <input class="header-form-adress" id="nftAdMintDestinationAddress"
-                       placeholder="0x62045C1C484A92eb9aa784bcD6379a0a5559415a" type="text"/>
-                <input class="header-form-adress" id="mintTokenUri"
-                       placeholder="QmYU1E3wDkrcRzpKDhEpSLgeUHpb5z96Q37PPTPDzVH6zB" type="text"/>
-            </div>
-            <button class="btn" href="" id="nftAdMintButton"
-                    onclick="adMintNfts(document.getElementById('nftAdRange').value,document.getElementById('nftAdMintDestinationAddress').value,document.getElementById('mintTokenUri').value)"
-                    type="button"><span>AdMint</span>
-            </button>
-        </div>
-
-        <!-- Update Tokens URIs (OnlyOwner) -->
-        <div class="header-form hide" id="nftUpdateTokenUriDiv">
-            <div class="header-form-content">
-                <input class="header-form-adress" id="nftTokenId" placeholder="1" type="text"/>
-            </div>
-            <div class="header-form-content">
-                <input class="header-form-adress" id="nftTokenUri"
-                       placeholder="Qmbms6aLmHze2jjf4UJ1rwPnkDyv8E8YiCuGRFP9QT2VZh" type="text"/>
-            </div>
-            <button class="btn" href="" id="nftUpdateTokenUriButton"
-                    onclick="updateTokenUri(document.getElementById('nftTokenId').value,document.getElementById('nftTokenUri').value)"
-                    type="button"><span>SetTokenURI</span>
-            </button>
-        </div>
-
-        <!-- Set/Update Ipfs Index Cid (OnlyOwner) -->
-        <div class="header-form hide" id="nftUpdateIpfsIndexCid">
-            <div class="header-form-content">
-                <input class="header-form-adress" id="nftIpfsIndexCid"
-                       placeholder="Qmbms6aLmHze2jjf4UJ1rwPnkDyv8E8YiCuGRFP9QT2VZh" type="text"/>
-            </div>
-            <button class="btn" href="" id="nftUpdateIpfsIndexCidButton"
-                    onclick="updateIpfsIndexCid(document.getElementById('nftIpfsIndexCid').value)"
-                    type="button"><span>IPFSIndexCID</span>
-            </button>
-            <button class="btn" href="" id="nftClearAllTokenId"
-                    onclick="clearAllTokenUriBatch()"
-                    type="button"><span>RevealNFTs</span>
-            </button>
-        </div>
-
-        <!-- Change Sale State (OnlyOwner) -->
-        <div class="header-form hide" id="contractStateDiv">
-            <button class="btn" href="" id="stateInactive" onclick="setStateInactive()" type="button">
-                <span>Inactive</span></button>
-            <button class="btn" href="" id="statePreOrder" onclick="setStatePreOrder()" type="button">
-                <span>Presale</span></button>
-            <button class="btn" href="" id="stateMainSale" onclick="setStateMainSale()" type="button">
-                <span>Main</span></button>
-            <button class="btn" href="" id="contractWithdraw" onclick="withdraw()" type="button">
-                <span>$</span></button>
-        </div>
     </div>
 
    
