@@ -1,9 +1,9 @@
-const NFT_CONTRACT_ADDRESS = "0xfb202f29b9a6e47a4b44bb37ec42eee9b157fd46";
-const OWNER_ADDRESS = "0x232f101d1e9860efea12fa4506ffd15aafd52513";
+const NFT_CONTRACT_ADDRESS = "0x74058eF73d97Af7d8075CCb96220e47506fEc6bb";
+const OWNER_ADDRESS = "0x62045C1C484A92eb9aa784bcD6379a0a5559415a";
 // const NODE_API_KEY = Cred.apiKey;
 const GAS_FEES = 250000;
 
-const NETWORK = "rinkeby";
+const NETWORK = "mainnet";
 
 const NFT_MAIN_SALE_ABI = [
     {
@@ -213,8 +213,8 @@ const CONTRACT_SALE_STATE_INACTIVE = 0;
 const CONTRACT_SALE_STATE_PRESALE = 1;
 const CONTRACT_SALE_STATE_MAIN_SALE = 2;
 
-const MINTING_PRE_ORDER_PRICE = 0.07
-const MINTING_MAIN_SALE_PRICE = 0.09
+const MINTING_PRE_ORDER_PRICE = 0.03
+const MINTING_MAIN_SALE_PRICE = 0.03
 
 const network =
     NETWORK === "mainnet" || NETWORK === "live" ? "mainnet" : "rinkeby";
