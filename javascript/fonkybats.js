@@ -541,7 +541,7 @@ async function updateFreeMintCount(_freeMintCount) {
         getElementById('totalPriceToMintMainSale').innerText = '0.00Ξ';
     } else {
         hideElementById('nftFreeMintButton');
-        getElementById('pricePerNftSet').innerText = '0.09Ξ';
+        getElementById('pricePerNftSet').innerText = '0.04Ξ';
     }
 }
 
