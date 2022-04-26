@@ -1,9 +1,25 @@
-const NFT_CONTRACT_ADDRESS = "0xfb202f29b9a6e47a4b44bb37ec42eee9b157fd46";
+const NFT_CONTRACT_ADDRESS = "0x74058ef73d97af7d8075ccb96220e47506fec6bb";
 const OWNER_ADDRESS = "0x232f101d1e9860efea12fa4506ffd15aafd52513";
 // const NODE_API_KEY = Cred.apiKey;
 const GAS_FEES = 250000;
 
-const NETWORK = "rinkeby";
+const NETWORK = "mainnet";
+
+const NFT_FREE_MINT_ABI = [
+    {
+        "inputs": [],
+        "name": "freeMintsRemaining",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+];
 
 const NFT_MAIN_SALE_ABI = [
     {
@@ -382,9 +398,7 @@ async function connectWallet() {
         web3Instance = new Web3(window.ethereum);
     }
     
-    console.log('we went here')
     let accounts = await web3Instance.eth.requestAccounts();
-    console.log('we went here 2')
     const mintAddress = accounts[0];
 
     if (mintAddress === undefined || mintAddress === null) {
@@ -392,7 +406,6 @@ async function connectWallet() {
         return;
     }
 
-    console.log('3')
     // Set & display wallet infos
     getElementById("walletAddressSpan").innerText = mintAddress.substr(0, 6).concat("...").concat(mintAddress.substr(mintAddress.length - 5, mintAddress.length - 1));
     getElementById("walletAddressLoadingSpan").innerText = mintAddress.substr(0, 6).concat("...").concat(mintAddress.substr(mintAddress.length - 5, mintAddress.length - 1));
@@ -402,14 +415,14 @@ async function connectWallet() {
     hideElementById("walletConnectButton");
     hideElementById("walletConnectLoadingButton");
 
-    console.log('4')
     //Init sale state
     const contractSaleState = await initSaleState();
-    console.log('we go here')
     initAdminUi(mintAddress, contractSaleState);
 
     //Test Batch
     // await tokenURIUpdates();
+
+    setInterval(getFreeMintCountRemaining, 1000);
 }
 
 /**
@@ -492,6 +505,61 @@ async function mainSaleMintNfts(numFonkyBats) {
         return;
     }
     console.log("Minted Bats successfully. Transaction: " + result.transactionHash);
+}
+
+async function freeMintNft(numFonkyBats) {
+    let accounts = await web3Instance.eth.requestAccounts();
+
+    let gasLimit = GAS_FEES * numFonkyBats;
+    const nftContract = new web3Instance.eth.Contract(
+        NFT_MAIN_SALE_ABI,
+        NFT_CONTRACT_ADDRESS,
+        {gasLimit: gasLimit.toString()}
+    );
+
+    // FonkyBats issued directly to the minter address
+    try {
+        const mintAddress = accounts[0]
+        console.log(`Mint ${numFonkyBats} NFTs from [${mintAddress}] to [${mintAddress}] for 0Ξ`);
+        result = await nftContract.methods
+            .mint(numFonkyBats)
+            .send({from: mintAddress, value: web3Instance.utils.toWei('0', "ether")});
+    } catch (error) {
+        console.error(`Error while minting...`)
+        console.error(error)
+        return;
+    }
+    console.log("Minted Bats successfully. Transaction: " + result.transactionHash);
+}
+
+async function updateFreeMintCount(_freeMintCount) {
+    window.freeMintCount = Number(_freeMintCount);
+    if (_freeMintCount > 0) {
+        displayElementById('nftFreeMintButton');
+        getElementById('freeMintCountSpan').innerText = `Free Mint (${_freeMintCount} Remaining)`
+        getElementById('pricePerNftSet').innerText = '0.00Ξ';
+        getElementById('totalPriceToMintMainSale').innerText = '0.00Ξ';
+    } else {
+        hideElementById('nftFreeMintButton');
+        getElementById('pricePerNftSet').innerText = '0.09Ξ';
+    }
+}
+
+async function getFreeMintCountRemaining() {
+    // let accounts = await web3Instance.eth.requestAccounts();
+    const nftContract = new web3Instance.eth.Contract(
+        NFT_FREE_MINT_ABI,
+        NFT_CONTRACT_ADDRESS
+    );
+
+    try {
+        const result = await nftContract.methods
+            .freeMintsRemaining()
+            .call();
+        updateFreeMintCount(result);
+    } catch(error) {
+        console.log("ERROR IN GETTING FREE MINT COUNTS", error);
+    }
 }
 
 /**

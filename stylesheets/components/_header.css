@@ -11,7 +11,7 @@ header components
   position: relative;
   width: 100%;
 }
-.header:after {
+/* .header:after {
   background: linear-gradient(to bottom, rgba(0,0,0,0) 35%,rgba(0,0,0,0.02) 36%,rgba(0,0,0,1) 100%);
   bottom: 0;
   content:'';
@@ -21,7 +21,7 @@ header components
   position: absolute;
   right: 0;
   z-index: 1;
-}
+} */
 .header-hide-after:after {
   display: none;
 }
@@ -103,9 +103,11 @@ header components
   padding: 2rem 3rem;
   margin: 0 auto;
   display: flex;
-  max-width: 56rem;
+  max-width: 80rem;
   align-items: center;
   justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .header-form-content {
