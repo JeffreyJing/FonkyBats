@@ -63,7 +63,7 @@
                 </div>
                 <!-- Presale-->
                 <input class="header-form-range hide" id="nftRangePreSale" max="20" min="1"
-                       onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintPreSale').html(($(this).val()*(window.freeMintCount > $(this).val() ? 0 : 0.07)).toFixed(2)+'Ξ')"
+                       onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintPreSale').html(($(this).val()*(window.freeMintCount > $(this).val() ? 0 : 0.04)).toFixed(2)+'Ξ')"
                        type="range"/>
                 <span class="header-form-price hide" id="nftPricePreSale">Price per nft : <b>0.04Ξ</b> Total: <b
                         id="totalPriceToMintPreSale">0.77Ξ</b></span>
@@ -71,8 +71,7 @@
                 <input class="header-form-range hide" id="nftRangeMainSale" max="10" min="1"
                        onInput="$('#nftToMintNumber').html($(this).val());$('#totalPriceToMintMainSale').html(($(this).val()*(window.freeMintCount > $(this).val() ? 0 : 0.04)).toFixed(2)+'Ξ')"
                        type="range"/>
-                <span class="header-form-price hide" id="nftPriceMainSale">Price/nft : <b id="pricePerNftSet">0.04Ξ</b> Total: <b
-                        id="totalPriceToMintMainSale">0.24Ξ</b></span>
+                <span class="header-form-price hide" id="nftPriceMainSale">Price per nft : <b>0.04Ξ</b></span>
             </div>
             <button class="btn hide" href="" id="nftFreeMintButton"
                 onclick="freeMintNft(document.getElementById('nftRangeMainSale').value)" type="button"
@@ -121,48 +120,7 @@
                 <span>Connect Wallet</span>
             </button>
         </a>
-    
-    <!-- 
-    <div class="header-scroll" id="scrollDownDivLoading">
-        <div class="header-scroll-content">
-            <div class="header-scroll-circle"></div>
-        </div>
-        <div class="header-scroll-text">Scroll down</div>
     </div>
-    -->
-
-    <!--    <div class="countdown">
-            <H2 class="countdown-title">BobbleBats are loading ...</h2>
-
-            <div id="countdown-progressBar">
-                <div></div>
-            </div>
-
-            <span>The main sale will be available in</span>
-            <ul class="countdown-days" id="countdown">
-                <li>
-                    <span class="countdown-numbers" id="day">00</span>
-                    <p class="countdown-name">days</p>
-                </li>
-                <li>
-                    <span class="countdown-numbers" id="hour">00</span>
-                    <p class="countdown-name">hours</p>
-                </li>
-                <li>
-                    <span class="countdown-numbers" id="minute">00</span>
-                    <p class="countdown-name">minutes</p>
-                </li>
-                <li>
-                    <span class="countdown-numbers" id="second">00</span>
-                    <p class="countdown-name">seconds</p>
-                </li>
-            </ul>
-        </div> -->
-    </div>
-
-   
-
-    
 </header>
 
 <!-- start block container -->
